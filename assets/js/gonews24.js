@@ -37,12 +37,13 @@ const loadPostDetails = async cat_id => {
 
 // Display Dynamic News by Category Clicked
 const displayPostDetails = posts => {
+    // Start Loader
+    toggleLoader(true);
     const newsContainer = document.getElementById('news-container');
     newsContainer.textContent = ``;
     posts.forEach(news => {
-        const {thumbnail_url, title, details, author, total_view, rating, _id} = news;
+        const {thumbnail_url, title, details, author, total_view, _id} = news;
         const {img, name, published_date} = author;
-        const {number, badge} = rating;
         const div = document.createElement('div');
         div.innerHTML = `
             <div class="flex flex-col items-center rounded-lg bg-white md:flex-row p-5 mb-5">
@@ -86,6 +87,8 @@ const displayPostDetails = posts => {
         `;
         newsContainer.appendChild(div);
     })
+    // Stop Loader
+    toggleLoader(false);
 
 }
 
@@ -133,6 +136,14 @@ const displayNewsDetails = news => {
     `;
 }
 
-
+// Loading Spinner Function
+const toggleLoader = isLoading => {
+    const loader = document.getElementById('spinner');
+    if(isLoading){
+        loader.classList.remove('hidden');
+    }else{
+        loader.classList.add('hidden');
+    }
+}
 
 loadNewsCategory();
