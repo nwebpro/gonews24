@@ -44,7 +44,7 @@ const displayPostDetails = posts => {
             <div class="flex flex-col items-center rounded-lg bg-white md:flex-row p-5 mb-5">
                 <img class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="${thumbnail_url}" alt="">
                 <div class="flex-1 flex-col justify-between py-8 md:px-8">
-                    <h5 class="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">${title}</h5>
+                    <h5 class="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">${title ? title : 'Not Found'}</h5>
                     <p class="mb-5 font-normal text-gray-700 dark:text-gray-400">${details.length > 338 ? details.slice(0, 338) + '...' : details}</p>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-between items-center">
                         <div class="flex flex-wrap items-center space-x-4">
@@ -52,14 +52,14 @@ const displayPostDetails = posts => {
                                 <img class="w-8 h-8 rounded-full" src="${img}" alt="Author Image">
                             </div>
                             <div class="flex-1 min-w-0">
-                                <p class="text-sm font-medium text-gray-900">${name}</p>
-                                <p class="space-x-1 text-sm text-gray-500">${published_date}</p>
+                                <p class="text-sm font-medium text-gray-900">${name ? name : 'Not Found'}</p>
+                                <p class="space-x-1 text-sm text-gray-500">${published_date ? published_date : 'Not Found'}</p>
                             </div>
                         </div>
                         <div class="text-center">
                             <div class="flex items-center justify-end md:justify-center">
                                 <i class="fa-regular fa-eye"></i>
-                                <p class="text-sm font-bold text-gray-600 ml-2">${total_view}</p>
+                                <p class="text-sm font-bold text-gray-600 ml-2">${total_view ? total_view : '0'}</p>
                             </div>
                         </div>
                         <div class="text-center">
@@ -72,7 +72,9 @@ const displayPostDetails = posts => {
                             </div>
                         </div>
                         <div class="text-right">
-                            <i class="fa-solid fa-arrow-right-long text-blue-600 cursor-pointer"></i>
+                            <label for="my-modal-3">
+                                <i class="fa-solid fa-arrow-right-long text-blue-600 cursor-pointer"></i>
+                            </label>
                         </div>
                     </div>
                 </div>

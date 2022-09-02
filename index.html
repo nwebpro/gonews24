@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6d4a24a985.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -55,9 +56,7 @@
                 </div>
                 <div class="hidden justify-center items-center w-full md:flex md:w-auto " id="navbar-sticky">
                     <ul id="cat-display" class="flex flex-col p-4 mt-4 border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                        <!-- <li>
-                            <a href="#" class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</a>
-                        </li> -->
+                        
                     </ul>
                 </div>
             </div>
@@ -67,7 +66,7 @@
         <section>
             <div class="container mx-auto">
                 <div class="p-4 my-4 text-sm text-black bg-white rounded-lg" role="alert">
-                    <span class="font-medium">4 items found for category Entertainment</span>
+                    <span id="found-item" class="font-medium">4 items found for category Entertainment</span>
                 </div>
             </div>
         </section>
@@ -78,6 +77,23 @@
                 </div>
             </div>
         </section>
+        <!-- Modal -->
+        <section>
+            <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+            <div class="modal">
+                <div class="modal-box relative">
+                    <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <div class="bg-white">
+                        <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="">
+                        <div class="p-5">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+  
     </main>
     <!-- Footer -->
     <footer class="bg-gray-900">
