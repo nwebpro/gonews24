@@ -37,6 +37,8 @@ const loadPostDetails = async cat_id => {
 
 // Display Dynamic News by Category Clicked
 const displayPostDetails = posts => {
+    console.log(posts);
+    const foundItem = document.getElementById('found-item');
     // Start Loader
     toggleLoader(true);
     const newsContainer = document.getElementById('news-container');
@@ -93,8 +95,8 @@ const displayPostDetails = posts => {
 }
 
 // Load News Data by News Id
-const loadNewsDetails = async mews_id => {
-    const url = `https://openapi.programming-hero.com/api/news/${mews_id}`;
+const loadNewsDetails = async news_id => {
+    const url = `https://openapi.programming-hero.com/api/news/${news_id}`;
     try {
         const res = await fetch(url);
         const data = await res.json();

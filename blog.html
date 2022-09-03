@@ -11,8 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/6d4a24a985.js" crossorigin="anonymous"></script>
-    <!-- Daisy ui -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
     <!-- Flowbite -->
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
     <!-- Tailwind -->
@@ -36,7 +34,7 @@
         <nav class="border-gray-200 px-4 sm:px-4 py-2.5 shadow mb-2">
             <div class="container flex flex-wrap justify-between items-center mx-auto">
             <a href="index.html" class="flex items-center">
-                <img src="assets/images/logo.png" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo">         
+                <img src="assets/images/logo.png" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo">
             </a>
             <div class="block" id="navbar-default">
                 <ul class="flex rounded-lg border-gray-100 flex-row space-x-8 mt-0 text-sm font-medium border-0">
@@ -50,67 +48,138 @@
             </div>
             </div>
         </nav>
-        <!-- Category Navbar -->
-        <nav class="px-2 py-2.5 w-full z-20 top-0 left-0">
-            <div class="container flex flex-wrap justify-center items-center mx-auto">
-                <div class="flex">
-                        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
-                            <span class="sr-only">Open main menu</span>
-                            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                        </button>
-                </div>
-                <div class="hidden justify-center items-center w-full md:flex md:w-auto " id="navbar-sticky">
-                    <ul id="cat-display" class="flex flex-col p-4 mt-4 border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                        
-                    </ul>
-                </div>
-            </div>
-        </nav>
     </header>
     <main class="mx-5">
-        <!-- Total News Found Message -->
         <section>
             <div class="container mx-auto">
-                <div class="p-4 my-4 text-sm text-black bg-white rounded-lg" role="alert">
-                    <span class="font-medium"><span id="found-item">4</span> items found for category Entertainment</span>
-                </div>
-            </div>
-        </section>
-        <!-- Spinner -->
-        <section id="spinner" class="hidden">
-            <div class="container mx-auto">
-                <div class="text-center my-10">
-                    <div role="status">
-                        <svg class="inline mr-2 w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
-                            <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
-                        </svg>
-                        <span class="sr-only">Loading...</span>
+                <div class="w-full md:w-1/2 mx-auto my-10 bg-white p-10">
+                    <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
+                        <h2 id="accordion-flush-heading-1">
+                            <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
+                                <span>Differences between Var, Let, and Const?</span>
+                                <svg data-accordion-icon="" class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h2>
+                        <div id="accordion-flush-body-1" class="" aria-labelledby="accordion-flush-heading-1">
+                            <div class="py-5 font-light border-b border-gray-200 dark:border-gray-700">
+                                <div class="mb-3">
+                                    <p class="mb-2 text-gray-800 font-bold text-2xl">Var</p>
+                                    <ul>
+                                        <li class="mb-3"><span class="font-bold text-black">Var keyword in JavaScript:</span> var is the oldest keyword to declare a variable in JavaScript.</li>
+                                        <li><span class="font-bold text-black">Scope:</span> Global scoped or function scoped. The scope of the var keyword is the global or function scope. This means that variables defined outside the function can be accessed globally and variables defined inside a particular function can be accessed within the function.</li>
+                                    </ul>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="mb-2 text-gray-800 font-bold text-2xl">Let</p>
+                                    <ul>
+                                        <li class="mb-3"><span class="font-bold text-black">The let keyword in JavaScript:</span> The let keyword is an enhanced version of the var keyword.</li>
+                                        <li><span class="font-bold text-black">Scope:</span> Block Scoped: The scope of a let variable is block scoped only. It cannot be accessible outside the specified block ({block}).</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="mb-2 text-gray-800 font-bold text-2xl">Const</p>
+                                    <ul>
+                                        <li class="mb-3"><span class="font-bold text-black">Const keyword in JavaScript:</span> The const keyword has the same properties as the let keyword, but cannot be updated by the user.</li>
+                                        <li><span class="font-bold text-black">Scope:</span> Block Scoped: When users declare a const variable, they must initialize it, otherwise, it returns an error. The user cannot update the const variable after declaring it.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 id="accordion-flush-heading-2">
+                            <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
+                                <span>Difference between Map, Filter, Find and forEach in Javascript</span>
+                                <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h2>
+                        <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
+                            <div class="py-5 font-light border-b border-gray-200 dark:border-gray-700">
+                                <div class="mb-3">
+                                    <p class="mb-2 text-gray-800 font-bold text-2xl">.map()</p>
+                                    <ul>
+                                        <li><span class="font-bold text-black">Map:</span> executes the same code on every element in an array and returns a new array with the updated elements.</li>
+                                    </ul>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="mb-2 text-gray-800 font-bold text-2xl">.filter()</p>
+                                    <ul>
+                                        <li><span class="font-bold text-black">Filter:</span> checks every element in an array to see if it meets certain criteria and returns a new array with the elements that return truthy for the criteria.</li>
+                                    </ul>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="mb-2 text-gray-800 font-bold text-2xl">.find()</p>
+                                    <ul>
+                                        <li><span class="font-bold text-black">Find:</span> Function .find() is also a search function like the previous but they differ in one small detail — this function returns only one match in an array. If in an array is more than one result, the function will return the first that has matched</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="mb-2 text-gray-800 font-bold text-2xl">.forEach()</p>
+                                    <ul>
+                                        <li><span class="font-bold text-black">forEach:</span> is used to execute the same code on every element in an array but does not change the array and it returns undefined.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 id="accordion-flush-heading-3">
+                            <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
+                                <span>Differences between arrow functions and regular functions in JavaScript?</span>
+                                <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h2>
+                        <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
+                            <div class="py-5 font-light border-b border-gray-200 dark:border-gray-700">
+                                <div class="mb-3">
+                                    <p class="mb-2 text-gray-800 font-bold text-2xl">Syntax</p>
+                                    <ul>
+                                        <li>The first and most obvious difference between arrow functions and regular functions is their syntax. Not only do they look different, but arrow functions also provide an implicit return shorthand and allow parenthesis around a single argument to be omitted.</li>
+                                        <li><span class="font-bold">Execution context</span> Inside a regular function, execution context (i.e. the value of this) is dynamic. This means that the value of this depends on how the function was invoked (simple invocation, method invocation, indirect invocation or constructor invocation). On the other hand, an arrow function does not define its own execution context. This results in an arrow function's this being resolved lexically (i.e. the scope in which the arrow function was defined).</li>
+                                    </ul>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="mb-2 text-gray-800 font-bold text-2xl">Methods</p>
+                                    <ul>
+                                        <li>Due to arrow functions not defining their own execution context, they're not well-suited for usage as methods. However, thanks to the Class fields proposal, arrow functions can be used as methods inside classes, if your environment supports it.</li>
+                                    </ul>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="mb-2 text-gray-800 font-bold text-2xl">Constructors</p>
+                                    <ul>
+                                        <li>Regular functions can be used as constructors, using the new keyword. Yet another consequence of the lexical resolution of this inside arrow functions is that they cannot be used as constructors. Using new with an arrow function results in a TypeError.</li>
+                                    </ul>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="mb-2 text-gray-800 font-bold text-2xl">Arguments</p>
+                                    <ul>
+                                        <li>Another difference is the binding of the arguments object. Unlike regular functions, arrow functions don't have their own arguments object. A modern alternative that circumvents this limitation is the usage of rest parameters.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="mb-2 text-gray-800 font-bold text-2xl">Other differences</p>
+                                    <ul>
+                                        <li>Finally, there are a couple of other differences that are not as important, but worth mentioning. These include the lack of a prototype property in arrow functions, as well as the fact that the yield keyword may not be used in an arrow function's body. A consequence of the latter is that arrow functions cannot be used as generators.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <h2 id="accordion-flush-heading-4">
+                            <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-4" aria-expanded="false" aria-controls="accordion-flush-body-4">
+                                <span>Differences between arrow functions and regular functions in JavaScript?</span>
+                                <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </h2>
+                        <div id="accordion-flush-body-4" class="hidden" aria-labelledby="accordion-flush-heading-4">
+                            <div class="py-5 font-light border-b border-gray-200 dark:border-gray-700">
+                                <div class="mb-3">
+                                    <p class="mb-2 text-gray-800 font-bold text-2xl">Template literals</p>
+                                    <ul>
+                                        <li>Template literals are literals delimited with backtick (`) characters, allowing for multi-line strings, for string interpolation with embedded expressions, and for special constructs called tagged templates.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Display News -->
-        <section class="my-10">
-            <div class="container mx-auto">
-                <div id="news-container">
-                    
-                </div>
-            </div>
-        </section>
-        <!-- Modal -->
-        <section>
-            <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-            <div class="modal">
-                <div class="modal-box relative">
-                    <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <div id="nodal-container" class="bg-white">
-                        
-                    </div> 
-                </div>
-            </div>
-        </section>
-  
     </main>
     <!-- Footer -->
     <footer class="bg-gray-900">
@@ -307,7 +376,5 @@
 
     <!-- Flowbite Js -->
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
-    <!-- Custom Script -->
-    <script src="assets/js/gonews24.js"></script>
 </body>
 </html>
