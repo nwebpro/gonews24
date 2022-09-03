@@ -17,32 +17,47 @@ const setCategory = category => {
         const {category_name, category_id} = cat;
         const li = document.createElement('li');
         li.innerHTML = `
-            <a href="#" onclick="loadPostDetails('${category_id}')" class="block py-2 pr-4 pl-3 mb-2 text-white bg-blue-700 rounded md:bg-transparent md:text-black md:p-0 dark:text-white">${category_name}</a>
+            <a href="#" onclick="loadPostDetails(${category_id}, '${category_name}') + toggleLoader('${true}')" class="block py-2 pr-4 pl-3 mb-2 text-white bg-blue-700 rounded md:bg-transparent md:text-black md:p-0 dark:text-white">${category_name}</a>
         `;
         catDisplay.appendChild(li);
     })
 }
 
 // Load Category Id
-const loadPostDetails = async cat_id => {
-    const url = `https://openapi.programming-hero.com/api/news/category/${cat_id}`;
+const loadPostDetails = async (cat_id, cat_name) => {
+    const url = `https://openapi.programming-hero.com/api/news/category/0${cat_id}`;
+    console.log(url);
     try {
         const res = await fetch(url);
         const data = await res.json();
-        displayPostDetails(data.data);
+        displayPostDetails(data.data, cat_name);
     } catch (error) {
         console.log(error);
     }
 }
 
 // Display Dynamic News by Category Clicked
-const displayPostDetails = posts => {
-    console.log(posts);
-    const foundItem = document.getElementById('found-item');
-    // Start Loader
-    toggleLoader(true);
+const displayPostDetails = (posts, cat_name) => {
     const newsContainer = document.getElementById('news-container');
     newsContainer.textContent = ``;
+    // Posts Found Message
+    const foundItem = document.getElementById('found-item');
+    if(posts.length > 0){
+        foundItem.innerHTML = `
+        <div class="p-4 my-4 text-sm text-black bg-white rounded-lg font-medium" role="alert">
+            ${posts.length ? posts.length : 'Not Found'} items found for category ${cat_name}
+        </div>
+    `;
+    }else{
+        foundItem.innerHTML = `
+        <div class="p-4 my-4 text-sm text-black bg-white rounded-lg font-medium" role="alert">
+            ${posts.length ? posts.length : 'Not Found'} for category ${cat_name}
+        </div>
+    `;
+    }
+    
+    // Total View Count Shorting
+    posts.sort((maxCount, minCount) => minCount.total_view - maxCount.total_view);
     posts.forEach(news => {
         const {thumbnail_url, title, details, author, total_view, _id} = news;
         const {img, name, published_date} = author;
@@ -148,4 +163,5 @@ const toggleLoader = isLoading => {
     }
 }
 
+loadPostDetails(1, 'Breaking News');
 loadNewsCategory();
