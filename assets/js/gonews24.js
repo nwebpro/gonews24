@@ -26,7 +26,6 @@ const setCategory = category => {
 // Load Category Id
 const loadPostDetails = async (cat_id, cat_name) => {
     const url = `https://openapi.programming-hero.com/api/news/category/0${cat_id}`;
-    console.log(url);
     try {
         const res = await fetch(url);
         const data = await res.json();
