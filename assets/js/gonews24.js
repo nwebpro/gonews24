@@ -80,7 +80,7 @@ const displayPostDetails = (posts, cat_name) => {
                         <div class="text-center">
                             <div class="flex items-center justify-end md:justify-center">
                                 <i class="fa-regular fa-eye"></i>
-                                <p class="text-sm font-bold text-gray-600 ml-2">${total_view ? total_view : '0'}</p>
+                                <p class="text-sm font-bold text-gray-600 ml-2">${total_view ? total_view : 'No data found'}</p>
                             </div>
                         </div>
                         <div class="text-center">
